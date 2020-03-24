@@ -6,7 +6,9 @@
        <h1> Cyber Learning Center </h1> 
     </div>
     <div class="classes">
-    
+       <div v-for="course in courses" :key="course">  
+          {{course}}
+       </div>
     </div>
   </div>
 
@@ -22,13 +24,11 @@
     <div class="timetable">
     <table>
       <tr>
-        <th>Time</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
+        <th v-for="item in headers" :key="item">
+          {{ item }}
+        </th>
       </tr>
+     
       <tr>
         <td>10:00 AM</td>
         <td>
@@ -82,13 +82,14 @@ export default {
     msg: String, 
   }, 
   data(){
-    return {
-      items: [ 'CI 102', 'CI 103', 'CI 492', 'CS 164', 
+    return { 
+      courses: [ 'CI 102', 'CI 103', 'CI 492', 'CS 164', 
       'CS 171', 'CS 172', 'CS 260', 'CS 265', 'CS 270', 'CS 283', 
       'CS 303', 'CS 338', 'CS 342', 'CS 345', 'CS 360', 'CS 370', 
       'CS 375', 'CS 383', 'CS 387', 'CS 432', 'CS 435', 'CS 522', 'CS 525', 
       'CS 530', 'CS 544', 'CS 571', 'CS 613', 'CS 645', 'CS 676', 
-      'CS T680', 'SE 181',' SE 211', 'SE 310', 'SE 311', 'SE 410', 'SE 576', 'SE 577'] 
+      'CS T680', 'SE 181',' SE 211', 'SE 310', 'SE 311', 'SE 410', 'SE 576', 'SE 577'], 
+      headers: [ 'Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 
     }
   }
 }
@@ -120,22 +121,6 @@ hr {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.courses{
-  width: 90%; 
-  margin-top: -30px; 
-}
-.course{
-  padding-left: 2vh; 
-  padding-right: 2vh; 
-  background: #212F3D; 
-  display: inline; 
-  line-height: 3em; 
-  color: white; 
-  border-radius: 5px; 
-  font-size: 10px; 
-  font-family: 'Raleway', sans-serif; 
-
-}
  
 .sidebar{
   position: absolute;
