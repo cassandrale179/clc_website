@@ -5,8 +5,8 @@
     <div class="sidebar-title card">  
        <h1> Cyber Learning Center </h1> 
     </div>
-    <div class="classes">
-       <div v-for="course in courses" :key="course">  
+    <div class="courses">
+       <div class="course" v-for="course in courses" :key="course">  
           {{course}}
        </div>
     </div>
@@ -17,7 +17,7 @@
        
     </div> 
     
-     <div class="courses"> 
+     <div> 
        <h4> Choose a class on the sidebar to see TA availables and their schedules </h4>
      </div>
 
@@ -83,12 +83,16 @@ export default {
   }, 
   data(){
     return { 
-      courses: [ 'CI 102', 'CI 103', 'CI 492', 'CS 164', 
-      'CS 171', 'CS 172', 'CS 260', 'CS 265', 'CS 270', 'CS 283', 
-      'CS 303', 'CS 338', 'CS 342', 'CS 345', 'CS 360', 'CS 370', 
+      courses: [ 'CI 102: Computing and Info II', 'CI 103: Computing and Info III', 
+      'CI 492: Senior Design II', 'CS 164: Intro to Computer Science', 
+      'CS 171: Programming I', 'CS 172: Programming II', 'CS 260: Data Structure', 
+      'CS 265: Advanced Programming Tools & Techniques', 'CS 270: Mathematic Concept for CS', 
+      'CS 283: Systems Programming', 
+      'CS 303: Cryptography', ],  
+      /* 'CS 338', 'CS 342', 'CS 345', 'CS 360', 'CS 370', 
       'CS 375', 'CS 383', 'CS 387', 'CS 432', 'CS 435', 'CS 522', 'CS 525', 
       'CS 530', 'CS 544', 'CS 571', 'CS 613', 'CS 645', 'CS 676', 
-      'CS T680', 'SE 181',' SE 211', 'SE 310', 'SE 311', 'SE 410', 'SE 576', 'SE 577'], 
+      'CS T680', 'SE 181',' SE 211', 'SE 310', 'SE 311', 'SE 410', 'SE 576', 'SE 577'*/ 
       headers: [ 'Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 
     }
   }
@@ -120,8 +124,15 @@ hr {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+.courses{
+  padding: 2vh;  
+}
 
- 
+.course{
+  padding: 1vh; 
+
+}
+
 .sidebar{
   position: absolute;
   height: 100%; 
@@ -155,7 +166,7 @@ hr {
   bottom: 0px; 
   background: #F8F9F9; 
   padding-left: 10vh; 
-  padding-top: 20vh; 
+  padding-top: 10vh; 
 }
 
 .mainview-title{
